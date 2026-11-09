@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VerzaLife Systems™ | Deep-Tech Architecture & Autonomous Ecosystems</title>
-    
-    <!-- Fonts: Inter for UI precision, JetBrains Mono for systems data -->
+    <title>VerzaLife Systems™ | NASDAQ: VRZA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #020611;
-            --bg-surface: rgba(10, 22, 40, 0.7);
-            --border-subtle: rgba(0, 210, 255, 0.15);
-            --border-active: rgba(0, 210, 255, 0.4);
-            --text-main: #f1f5f9;
-            --text-muted: #64748b;
-            --accent-cyan: #00d2ff;
-            --accent-blue: #3b82f6;
-            --accent-glow: rgba(0, 210, 255, 0.25);
-            --grid-color: rgba(0, 210, 255, 0.03);
+            --bg-color: #080C14;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-accent: #00AEEF;
+            --secondary-accent: #0077FF;
+            --text-main: #F0F4F8;
+            --text-muted: #94A3B8;
         }
 
         * {
@@ -31,324 +25,158 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-deep);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 40px 20px;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Cybernetic Grid Background Overlay */
-        .cyber-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
             background-image: 
-                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -2;
-            pointer-events: none;
+                radial-gradient(circle at 50% 0%, rgba(0, 174, 239, 0.15), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 119, 255, 0.08), transparent 40%);
         }
 
-        /* Dynamic Radial Lighting */
-        .ambient-core {
-            position: absolute;
-            top: 15%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 700px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(0, 210, 255, 0.12) 0%, rgba(2, 6, 17, 0) 70%);
-            z-index: -1;
-            pointer-events: none;
-            filter: blur(40px);
-        }
-
-        .main-wrapper {
-            max-width: 1000px;
+        .container {
+            max-width: 900px;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-            z-index: 1;
         }
 
-        /* Telemetry Header Bar */
-        .telemetry-bar {
-            display: inline-flex;
-            align-items: center;
-            gap: 16px;
-            background: rgba(0, 210, 255, 0.04);
-            border: 1px solid var(--border-subtle);
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--accent-cyan);
-            margin-bottom: 35px;
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.05);
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(0, 174, 239, 0.1);
+            border: 1px solid rgba(0, 174, 239, 0.3);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-accent);
             letter-spacing: 1px;
-            text-transform: uppercase;
+            margin-bottom: 24px;
         }
 
-        .telemetry-status {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .pulse-dot {
-            width: 6px;
-            height: 6px;
-            background-color: var(--accent-cyan);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-cyan);
-            animation: core-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        @keyframes core-pulse {
-            0%, 100% { opacity: 0.4; transform: scale(0.9); }
-            50% { opacity: 1; transform: scale(1.3); }
-        }
-
-        /* Hero Typography */
         h1 {
-            font-size: clamp(42px, 7vw, 76px);
-            font-weight: 800;
-            letter-spacing: -2px;
-            line-height: 1.05;
+            font-size: clamp(40px, 6vw, 68px);
+            font-weight: 700;
+            letter-spacing: -1px;
             margin-bottom: 12px;
-            text-transform: uppercase;
+            line-height: 1.1;
         }
 
         h1 span {
-            background: linear-gradient(135deg, #00d2ff 0%, #3b82f6 50%, #9333ea 100%);
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .tagline {
-            font-size: clamp(16px, 2.5vw, 22px);
-            font-weight: 500;
-            color: var(--text-main);
+            font-size: clamp(18px, 2.5vw, 24px);
+            font-weight: 400;
+            color: var(--text-muted);
             margin-bottom: 8px;
-            letter-spacing: -0.5px;
         }
 
-        .spec-sub {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 50px;
+        .subtext {
+            font-size: 15px;
+            color: #64748B;
             letter-spacing: 0.5px;
-            text-transform: uppercase;
+            margin-bottom: 48px;
         }
 
-        /* Core Division Matrix */
-        .matrix-section {
-            width: 100%;
-            margin-bottom: 50px;
-        }
-
-        .matrix-header {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .matrix-header::before, .matrix-header::after {
-            content: "";
-            height: 1px;
-            flex: 1;
-            max-width: 80px;
-            background: var(--border-subtle);
-        }
-
-        .matrix-grid {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 16px;
-            width: 100%;
+            margin-bottom: 48px;
         }
 
-        .matrix-node {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            border-radius: 8px;
-            padding: 22px 14px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            backdrop-filter: blur(12px);
-        }
-
-        .matrix-node::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .matrix-node:hover {
-            border-color: var(--border-active);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px -10px var(--accent-glow);
-        }
-
-        .matrix-node:hover::before {
-            opacity: 1;
-        }
-
-        .node-title {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 6px;
-        }
-
-        .node-status {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10px;
-            color: var(--accent-cyan);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        /* Executive Command Block */
-        .executive-block {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
             border-radius: 12px;
-            padding: 28px 45px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(12px);
-            display: inline-block;
-            position: relative;
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--text-main);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
 
-        .executive-block b {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 17px;
+        .card:hover {
+            border-color: rgba(0, 174, 239, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 174, 239, 0.1);
+        }
+
+        .status-card {
+            grid-column: 1 / -1;
+            background: rgba(0, 174, 239, 0.04);
+            border-style: dashed;
+            color: var(--primary-accent);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+        }
+
+        .leadership {
+            margin-top: 24px;
+            padding-top: 32px;
+            border-top: 1px solid var(--card-border);
+            display: inline-block;
+        }
+
+        .leadership h3 {
+            font-size: 18px;
+            font-weight: 700;
             letter-spacing: 2px;
             color: var(--text-main);
-            display: block;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
-        .executive-block p {
+        .leadership p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: 60px;
             font-size: 13px;
-            color: var(--text-muted);
-            margin: 3px 0;
-            font-family: 'JetBrains Mono', monospace;
-            letter-spacing: 0.5px;
-        }
-
-        /* Advanced System Footer */
-        .system-footer {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            color: var(--text-muted);
-            line-height: 1.8;
-            border-top: 1px solid var(--border-subtle);
-            padding-top: 25px;
-            width: 100%;
-            max-width: 700px;
-            text-align: center;
-            letter-spacing: 0.5px;
-        }
-
-        .system-footer span {
-            color: var(--text-main);
-            font-weight: 600;
+            color: #475569;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-    <div class="cyber-grid"></div>
-    <div class="ambient-core"></div>
-
-    <div class="main-wrapper">
-        <!-- Telemetry & System Status -->
-        <div class="telemetry-bar">
-            <div class="telemetry-status">
-                <div class="pulse-dot"></div>
-                SYSTEM ONLINE
-            </div>
-            <span>//</span>
-            <span>SEC_LEVEL: QUANTUM-GRADE</span>
-            <span>//</span>
-            <span>EST. 2026</span>
-        </div>
-
-        <!-- Hero Identification -->
+    <div class="container">
+        <div class="badge">EST. 2026 &nbsp;|&nbsp; NASDAQ: VRZA</div>
+        
         <h1>Verza<span>Life</span> Systems™</h1>
         <p class="tagline">Powering the Connected Life.</p>
-        <p class="spec-sub">Autonomous Infrastructure • Neural Networking • Advanced Core Programming</p>
+        <p class="subtext">Advanced Technology • Networking • Cloud Infrastructure</p>
 
-        <!-- Division Architecture Matrix -->
-        <div class="matrix-section">
-            <div class="matrix-header">Core Ecosystem Deployment Nodes</div>
-            <div class="matrix-grid">
-                <div class="matrix-node">
-                    <div class="node-title">VerzaNet™</div>
-                    <div class="node-status">Active Mesh</div>
-                </div>
-                <div class="matrix-node">
-                    <div class="node-title">VerzaCloud™</div>
-                    <div class="node-status">Distributed</div>
-                </div>
-                <div class="matrix-node">
-                    <div class="node-title">VerzaCode™</div>
-                    <div class="node-status">Compiling</div>
-                </div>
-                <div class="matrix-node">
-                    <div class="node-title">VerzaSecure™</div>
-                    <div class="node-status">Encrypted</div>
-                </div>
-                <div class="matrix-node">
-                    <div class="node-title">VerzaAI™</div>
-                    <div class="node-status">Autonomous</div>
-                </div>
-            </div>
+        <div class="grid">
+            <div class="card">VerzaNet™</div>
+            <div class="card">VerzaCloud™</div>
+            <div class="card">VerzaCode™</div>
+            <div class="card">VerzaSecure™</div>
+            <div class="card">VerzaAI™</div>
+            <div class="card status-card">Ecosystem Launching Soon</div>
         </div>
 
-        <!-- Leadership Architecture -->
-        <div class="executive-block">
-            <b>AMARI RICHARDSEN</b>
-            <p>Chief Executive Officer & Director of Systems Architecture</p>
-            <p>VerzaLife Systems™</p>
+        <div class="leadership">
+            <h3>ARYAN SEWDASS</h3>
+            <p>Chief Executive Officer & Director</p>
+            <p>VerzaLife Systems Limited</p>
         </div>
-    </div>
 
-    <!-- System Footer -->
-    <div class="system-footer">
-        © 2026 <span>VerzaLife Systems™</span>. All Rights Reserved.<br>
-        Autonomous Systems Infrastructure protected under the Jurisdiction of Trinidad and Tobago.<br>
-        VerzaLife Systems Limited — Global Enterprise Operations
+        <footer>
+            © 2026 VerzaLife Systems™. All Rights Reserved.<br>
+            Protected under the Laws of Trinidad and Tobago.
+        </footer>
     </div>
 
 </body>
